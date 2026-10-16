@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="../assets/css/links.css" />
+  </head>
+  <body>
+    <div class="css">
+      <input class="css-toggle" type="checkbox" name="css" id="css" checked />
+      <label for="css">Turn on CSS</label>
+    </div>
+
+    <h2>Blogroll</h2>
+    <ul>
+      {{ blogroll }}
+    </ul>
+
+    <h2>Useful or interesting</h2>
+    <ul>
+      {{ interesting }}
+    </ul>
+
+    <nav class="home-btn">
+      <a href="/">
+        <img src="../assets/img/main2/home-icon.webp" alt="Go back to home" />
+      </a>
+    </nav>
+
+    <script type="module" src="../assets/js/main.js"></script>
+  </body>
+</html>

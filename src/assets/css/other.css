@@ -1,0 +1,149 @@
+@import url("base.css") layer(base);
+
+@layer layout {
+    html:has(.css-toggle:checked) {
+        .frame-container {
+            background-image: url('../img/main2/other-mobile.webp');
+            background-size: 100% auto;
+        }
+
+        .post {
+            position: absolute;
+            border: min(.8cqw, 2px) solid black;
+            background: var(--secondary);
+            overflow: visible;
+            padding: var(--space-sm);
+
+            p {
+                font-size: min(4cqw, 2rem);
+            }
+        }
+
+        .post__picture {
+            height: 32cqw;
+            width: 23cqw;
+            top: 52cqw;
+            left: 8cqw;
+            transform: matrix3d(1, 0, 0, 0, -0.08, 0.8, 0, -0.0002, 0, 0, 1, 0, 0, 9, 0, 1);
+
+            &::before {
+                content: '';
+                position: absolute;
+                height: 90%;
+                width: 83%;
+                border: min(.8cqw, 2px) solid black;
+                top: 3%;
+                left: 4%;
+                pointer-events: none;
+            }
+
+
+            &::after {
+                content: '';
+                background: var(--secondary);
+                clip-path: polygon(100% 0, 100% 0, 100% 100%, 29% 100%);
+                position: absolute;
+                width: 38%;
+                height: 57%;
+                border: min(.8cqw, 2px) solid black;
+                top: 37%;
+                left: 75%;
+                transform: skew(20deg, 0deg);
+            }
+        }
+
+        .post__book {
+            height: 30cqw;
+            width: 10cqw;
+            top: 90cqw;
+            left: 68cqw;
+
+            p {
+                position: absolute;
+                top: 2cqw;
+                width: 25cqw;
+                left: 50%;
+                transform-origin: 0 0;
+                transform: rotate(90deg) translateY(-50%);
+            }
+
+            &::before {
+                content: '';
+                background: var(--secondary);
+                clip-path: polygon(100% 100%, 101% 100%, 10% -158%, 0% 0%, 75% 0%, 100% 62%);
+                rotate: -70deg;
+                position: absolute;
+                height: 47.2%;
+                width: 148.4%;
+                border: min(.8cqw, 2px) solid black;
+                top: -13.6%;
+                left: -78.9%;
+                pointer-events: none;
+            }
+
+
+            &::after {
+                content: '';
+                background: var(--secondary);
+                clip-path: polygon(0 7%, 56% 0, 100% 0, 100% 100%, 0% 100%);
+                position: absolute;
+                width: 101%;
+                border-bottom-right-radius: 3px;
+                height: 100%;
+                border: min(.8cqw, 2px) solid black;
+                top: -8%;
+                left: -114%;
+                transform: skew(0deg, 20deg);
+            }
+        }
+
+        @media (min-width: 426px) {
+            .frame-container {
+                background-image: url('../img/main2/other.webp');
+            }
+
+            .post__picture {
+                height: 27cqw;
+                width: 18cqw;
+                top: 16.5cqw;
+                left: 19cqw;
+                padding: var(--space-md);
+
+                &::before {
+                    height: 92%;
+                    width: 89%;
+                }
+
+                &::after {
+                    width: 43%;
+                    height: 57%;
+                    top: 37%;
+                    left: 72%;
+                }
+            }
+
+            .post__book {
+                height: 21cqw;
+                width: 7cqw;
+                top: 46.2cqw;
+                left: 68cqw;
+
+                &::before {
+                    height: 47.2%;
+                    width: 148.4%;
+                    top: -13.6%;
+                    left: -78.9%;
+                }
+
+
+                &::after {
+                    width: 101%;
+                    height: 100%;
+                    top: -8%;
+                    left: -114%;
+                }
+            }
+        }
+    }
+
+}

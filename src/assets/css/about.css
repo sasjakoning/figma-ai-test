@@ -1,0 +1,103 @@
+@import url("base.css") layer(base);
+
+@layer layout {
+    html:has(.css-toggle:checked) {
+        .frame-container {
+            background-image: url('../img/main2/about-mobile.webp');
+            background-size: 100% auto;
+        }
+
+        .post {
+            position: absolute;
+            font-family: 'Comic Neue';
+            scrollbar-color: var(--backdrop) transparent;
+            scrollbar-width: thin;
+        }
+
+        .post__about {
+            height: 74cqw;
+            width: 52cqw;
+            overflow-y: scroll;
+            top: 18cqw;
+            left: 8cqw;
+            padding: var(--space-sm);
+
+            p, br {
+                line-height: 1.3rem;
+                background-image: linear-gradient(to top,
+                        transparent 1px,
+                        rgb(30, 100, 175) 1px,
+                        rgb(30, 100, 175) calc(1px + 1px),
+                        transparent calc(1px + 1px));
+                background-size: 100% 1.3rem;
+            }
+
+        }
+
+        .post__skills {
+            height: 55cqw;
+            width: 33cqw;
+            top: 105cqw;
+            left: 50cqw;
+            overflow-y: scroll;
+            padding: var(--space-sm);
+
+            p, ul>li {
+                font-size: .75rem;
+                word-break: break-word;
+            }
+
+            ul {
+                list-style: square;
+
+                margin-left: var(--space-md);
+            }
+
+            li::marker {
+                color: rgb(30, 100, 175);
+            }
+        }
+
+        .post__image {
+            background: red;
+            width: 20cqw;
+            height: 20cqw;
+            top: 34cqw;
+            left: 67cqw;
+            clip-path: polygon(1% 4%, 31% 2.7%, 98% 1%, 97% 13%, 95% 98.7%, 69% 99.4%, 32% 99%, 5% 96%, 2% 52%);
+
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        @media (min-width: 426px) {
+            .frame-container {
+                background-image: url('../img/main2/about.webp');
+            }
+
+            .post__about {
+                height: 41cqw;
+                width: 29cqw;
+                top: 19.5cqw;
+                left: 13cqw;
+            }
+
+            .post__skills {
+                height: 27cqw;
+                width: 13cqw;
+                top: 19cqw;
+                left: 70.8cqw;
+            }
+
+            .post__image {
+                width: 11.2cqw;
+                height: 11.2cqw;
+                top: 14cqw;
+                left: 50.2cqw;
+            }
+        }
+
+    }
+}

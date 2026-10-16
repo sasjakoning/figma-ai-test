@@ -1,0 +1,16 @@
+@import url("base.css") layer(base);
+
+@layer layout {
+    html:has(.css-toggle:checked) {
+        body {
+            background: var(--background);
+        }
+
+        /* ul {
+            border: 1px solid red;
+            background-image: url(../img/main2/note.webp);
+            background-repeat: no-repeat;
+            background-size: 100%;
+        } */
+    }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "blog-2026",
+  "version": "1.0.0",
+  "description": "Barebones web blog",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build/build.js",
+    "deploy": "npm run build && git -C _site add -A && git -C _site commit -m \"Deploy\" && git -C _site push",
+    "dev": "node --watch-path=./src --watch-path=./build build/build.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}

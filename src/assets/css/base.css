@@ -1,0 +1,134 @@
+:root {
+    --primary: hsl(0, 0%, 0%);
+    --secondary: hsl(0, 0%, 100%);
+    --tertiary: hsl(0, 0%, 40%);
+    --tertiary-dark: hsl(0, 0%, 60%);
+    --backdrop: hsl(0, 0%, 80%);
+    --background: hsl(0, 0%, 95%);
+
+    --space-xs: .25rem;
+    --space-sm: .5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-xxl: 3rem;
+}
+
+@font-face {
+    font-family: 'Comic Neue';
+    src: url('../fonts/ComicNeue-Regular.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Neue';
+    src: url('../fonts/ComicNeue-Italic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comic Neue';
+    src: url('../fonts/ComicNeue-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@layer base, text, layout;
+
+@layer base {
+    html:has(.css-toggle:checked) {
+
+        *, html {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-size: .875rem;
+            line-height: 130%;
+        }
+
+        body {
+            font-family: sans-serif;
+            background: var(--primary);
+        }
+
+        @view-transition {
+            navigation: auto;
+        }
+
+        .layout {
+            display: grid;
+            place-items: center;
+            width: 100dvw;
+            height: 100dvh;
+        }
+
+        .css {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .home-btn {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 3rem;
+            height: 3rem;
+            margin: .5rem;
+            z-index: 10;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-md);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        .fallback {
+            display: none;
+        }
+
+        .frame-container {
+            container-type: size;
+            position: relative;
+            width: 100dvw;
+            height: 100dvh;
+            margin-inline: auto;
+            aspect-ratio: 9/16;
+            background-color: var(--background);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position-y: top;
+            background-position-x: center;
+            position: relative;
+        }
+
+
+        @media (min-width: 426px) {
+            *, html {
+                font-size: 1rem;
+            }
+
+            .frame-container {
+                height: auto;
+                width: min(100dvw - var(--space-xl), 120dvh);
+                aspect-ratio: 4/3;
+            }
+
+            .image-grid {
+                grid-template-columns: repeat(var(--columns), 1fr);
+            }
+        }
+    }
+}

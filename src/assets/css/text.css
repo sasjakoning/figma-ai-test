@@ -1,0 +1,58 @@
+@layer text {
+    .post {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-md);
+        word-break: break-word;
+        color: var(--primary);
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+        }
+
+        h4 {
+            font-size: 1.125rem;
+        }
+
+        h1:not(:first-child), h2:not(:first-child), h3:not(:first-child), h4:not(:first-child) {
+            margin-top: var(--space-md);
+        }
+
+        pre {
+            width: 100%;
+            background: var(--tertiary);
+            border-radius: var(--space-sm);
+
+            code {
+                width: 100%;
+                padding: var(--space-sm);
+                overflow-x: scroll;
+                display: block;
+            }
+        }
+
+        img {
+            border: 1px solid var(--tertiary);
+            border-radius: var(--space-sm);
+        }
+
+        ul {
+            padding-left: var(--space-md);
+        }
+    }
+
+    @media (min-width: 426px) {
+        .post {
+            max-width: 40rem;
+            margin: auto;
+        }
+    }
+}

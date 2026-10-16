@@ -1,0 +1,15 @@
+version = 1
+
+# Default: everything is code, under code license
+[[annotations]]
+path = "**"
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Sasja"
+SPDX-License-Identifier = "MIT"
+
+# writing and images: CC BY-SA 4.0
+[[annotations]]
+path = ["src/posts/**", "src/assets/img/**"]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Sasja"
+SPDX-License-Identifier = "CC-BY-SA-4.0"

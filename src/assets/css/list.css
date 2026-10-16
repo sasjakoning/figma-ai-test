@@ -1,0 +1,118 @@
+@import url("base.css") layer(base);
+
+@layer layout {
+    html:has(.css-toggle:checked) {
+        .list {
+            overflow-y: scroll;
+            position: absolute;
+            aspect-ratio: 337 / 607;
+            padding: 4cqw 2cqw;
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                padding: var(--space-sm);
+                list-style: none;
+            }
+
+            .list-item__wrapper {
+                padding-bottom: var(--space-md);
+            }
+
+            .list-item__wrapper:not(:first-of-type) {
+                padding-top: var(--space-md);
+                border-top: 1px solid var(--tertiary-dark);
+            }
+
+            .list-item {
+                display: flex;
+                flex-direction: column;
+                gap: var(--space-xs);
+            }
+
+            li a {
+                text-decoration: none;
+            }
+        }
+
+        body.blog {
+            .frame-container {
+                background-image: url('../img/main2/blog-mobile.webp');
+            }
+
+            .list {
+                width: 80cqw;
+                max-height: calc(100dvh - 6cqw);
+                top: 6cqw;
+                left: 10.5cqw;
+                clip-path: polygon(50% -2%, 100% 1%, 100% 100%, 50% 99%, 0% 100%, 0% 2%);
+                padding: 4cqw 2cqw;
+                background: var(--primary);
+                font-family: monospace;
+
+                .list-item {
+                    color: var(--secondary);
+                }
+
+                .list-item__date {
+                    color: var(--tertiary-dark);
+                }
+            }
+
+            @media (min-width: 426px) {
+                .frame-container {
+                    background-image: url('../img/main2/blog.webp');
+                }
+
+                .list {
+                    height: 39cqw;
+                    width: 81cqw;
+                    top: 8cqw;
+                    left: 10cqw;
+                    clip-path: polygon(48% -2%, 86% 1%, 99% 5%, 99% 99%, 50% 97%, 1.5% 100%, -0.5% 50%, 0% 7%);
+                    padding: var(--space-xxl) var(--space-md);
+                }
+            }
+        }
+
+        body.weeknotes {
+            .frame-container {
+                background-image: url('../img/main2/weeknotes-mobile.webp');
+            }
+
+            .list {
+                height: 103cqw;
+                width: 66cqw;
+                top: 23cqw;
+                left: 10.5cqw;
+                clip-path: polygon(50% 0.4%, 88% 1%, 87% 9%, 100% 9%, 101% 97%, 50% 97.5%, 0% 98%, -1% 0%);
+                aspect-ratio: 337 / 607;
+                font-family: 'Comic Neue';
+                background: var(--secondary);
+
+                .list-item__wrapper:not(:first-of-type) {
+                    border-top: 1px solid var(--tertiary);
+                }
+
+                li a {
+                    color: var(--primary);
+                }
+            }
+
+            @media (min-width: 426px) {
+                .frame-container {
+                    background-image: url('../img/main2/weeknotes.webp');
+                }
+
+                .list {
+                    height: 38.5cqw;
+                    top: 6.7cqw;
+                    width: 31cqw;
+                    left: 39.9cqw;
+                    clip-path: polygon(42% 1%, 87% 1%, 87% 11%, 99% 12%, 100% 97%, 50% 97%, 2% 99%, 2% 50%, 0% 0%);
+                    padding: var(--space-md);
+                }
+            }
+        }
+    }
+}

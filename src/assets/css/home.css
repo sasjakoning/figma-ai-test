@@ -1,0 +1,105 @@
+@import url("base.css") layer(base);
+
+@layer layout {
+    html:has(.css-toggle:checked) {
+        .frame-container {
+            background-image: url('../img/main2/home.webp');
+            background-size: 170%;
+            background-position-y: bottom;
+        }
+
+        .person {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: 10;
+            width: 46cqw;
+            aspect-ratio: 491 / 944;
+            background-image: url('../img/main2/home-speech-sprite.webp');
+            background-repeat: no-repeat;
+            background-size: 90cqw;
+            background-position: 0 100%;
+            animation: idle 2s steps(2) infinite;
+        }
+
+        .navigation {
+            position: absolute;
+            top: 3cqw;
+            left: 3cqw;
+            font-size: min(5cqw, 16px);
+            background: white;
+            padding: min(8cqw, 25.6px);
+            border: 2px solid black;
+            border-radius: 50%;
+
+            ul {
+                padding-top: 2cqh;
+                display: flex;
+                list-style: none;
+                justify-content: space-between;
+            }
+        }
+
+        .navigation::before {
+            content: "";
+            position: absolute;
+            /* background-color: red; */
+            background-image: url(../img/main2/bubble-piece.webp);
+            background-size: 100%;
+            aspect-ratio: 14 / 9;
+            width: 25%;
+            top: 79%;
+            left: 78%;
+            scale-y: -1;
+            transform: scaleX(-1);
+            rotate: -26deg;
+        }
+
+        @media (min-width: 426px) {
+            .frame-container {
+                background-size: 100%;
+            }
+
+            .person {
+                width: 31cqw;
+                background-size: 60cqw;
+            }
+
+            .navigation {
+                bottom: 3cqw;
+                top: auto;
+                padding: min(5cqw, 32px);
+            }
+
+            .navigation::before {
+                transform: scaleX(1) scaleY(-1);
+                rotate: 31deg;
+                width: 22%;
+                top: -7%;
+                left: 86%;
+            }
+        }
+    }
+
+    @keyframes idle {
+        from {
+            background-position: 0 100%;
+        }
+
+        to {
+            background-position: -90cqw 100%;
+        }
+    }
+
+    @media (min-width: 426px) {
+        @keyframes idle {
+            from {
+                background-position: 0 100%;
+            }
+
+            to {
+                background-position: -60cqw 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="../../assets/css/post.css" />
+  </head>
+  <body class="{{ type }}">
+    <main class="layout">
+      <div class="css">
+        <input class="css-toggle" type="checkbox" name="css" id="css" checked />
+        <label for="css">Turn on CSS</label>
+      </div>
+
+      <section class="frame-container">
+        <section
+          class="background"
+          aria-label="A handdrawn illustration of a house with a tree next to it and a fence surrounding it. Not colored. In the foreground a character representing the author is present."
+        >
+          <img
+            src="./assets/img/main2/home-fallback.webp"
+            alt=""
+            width="100%"
+            aria-hidden="true"
+            class="fallback"
+          />
+        </section>
+
+        <div class="post-wrapper">
+          <article class="post">
+            <h1>{{ title }}</h1>
+            {{ content }}
+          </article>
+        </div>
+      </section>
+
+      <div class="sidenote-container">
+        <button popovertarget="sidenote" class="sidenote-button">
+          <!-- <img src="../../assets/img/main2/icon.webp" alt="" /> -->
+        </button>
+
+        <div class="sidenote" id="sidenote" popover>
+          <img src="../../assets/img/main2/sidenote-1.webp" alt="" />
+          <div class="wrapper">
+            <div class="test"></div>
+            <p>{{ sidenote }}</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <nav class="home-btn">
+      <a href="/">
+        <img
+          src="../../assets/img/main2/home-icon.webp"
+          alt="Go back to home"
+        />
+      </a>
+    </nav>
+
+    <script type="module" src="../assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="../assets/css/list.css" />
+  </head>
+  <body class="{{ type }} layout">
+    <!-- <nav>
+      <a href="/">
+        <h1>Sasja Koning</h1>
+      </a>
+    </nav> -->
+
+    <div class="css">
+      <input class="css-toggle" type="checkbox" name="css" id="css" checked />
+      <label for="css">Turn on CSS</label>
+    </div>
+
+    <section class="frame-container">
+      <section
+        class="background"
+        aria-label="A handdrawn illustration of a house with a tree next to it and a fence surrounding it. Not colored. In the foreground a character representing the author is present."
+      >
+        <img
+          src="./assets/img/main2/home-fallback.webp"
+          alt=""
+          width="100%"
+          aria-hidden="true"
+          class="fallback"
+        />
+      </section>
+
+      <div class="list">
+        <ul>
+          {{ list }}
+        </ul>
+      </div>
+    </section>
+
+    <nav class="home-btn">
+      <a href="/">
+        <img src="../assets/img/main2/home-icon.webp" alt="Go back to home" />
+      </a>
+    </nav>
+
+    <!-- <footer>
+      <hr />
+      <div>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="blog/">Blog</a></li>
+          <li><a href="weeknotes/">Weeknotes</a></li>
+        </ul>
+        <ul>
+          <li><a href="blog/feed.xml">RSS Feed - Blogposts</a></li>
+          <li><a href="weeknotes/feed.xml">RSS Feed - Weeknotes</a></li>
+          <li>
+            <a href="https://waag.social/@sasja" rel="me" target="_blank"
+              >Mastodon</a
+            >
+          </li>
+        </ul>
+      </div>
+      <img src="../../assets/img/main/header.webp" alt="" width="160" />
+    </footer> -->
+
+    <script type="module" src="../assets/js/main.js"></script>
+  </body>
+</html>

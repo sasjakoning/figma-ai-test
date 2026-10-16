@@ -1,0 +1,225 @@
+@import url("base.css") layer(base);
+@import url("text.css") layer(text);
+
+@layer layout {
+    html:has(.css-toggle:checked) {
+        body.blog {
+            .frame-container {
+                background-image: url('../img/main2/blog-mobile.webp');
+                background-size: 116% auto;
+            }
+
+            .post-wrapper {
+                background-color: var(--primary);
+                height: 166cqw;
+                max-height: calc(100dvh - 7.3cqw);
+                width: 94cqw;
+                top: 7.3cqw;
+                left: 50%;
+                transform: translateX(-50%);
+                clip-path: polygon(50% -2%, 100% 1%, 100% 100%, 50% 99%, 2% 100%, 0% 2%);
+            }
+
+            .post {
+                color: var(--secondary);
+                font-family: sans-serif;
+
+                h1, h2, h3, h4 {
+                    font-family: monospace;
+                }
+
+                a {
+                    color: aqua;
+                }
+            }
+
+            @media (min-width: 426px) {
+                .frame-container {
+                    background-image: url('../img/main2/blog-post.webp');
+                    background-size: 100%;
+                }
+
+                .post-wrapper {
+                    height: 57.7cqw;
+                    width: 100%;
+                    top: 9.6cqw;
+                    clip-path: polygon(20% 0.7%, 50% 0.1%, 80% 2%, 100% 1.7%, 100% 99%, 80% 99%, 49% 99%, 18% 100%, 0% 100%, 0% 0%);
+                }
+            }
+        }
+
+        body.weeknotes {
+            .frame-container {
+                background-image: url('../img/main2/weeknotes-post-mobile.webp');
+                background-position-y: top;
+
+                &::before, &::after {
+                    content: '';
+                    background: rgba(252, 255, 79, 0.4);
+                    position: absolute;
+                    z-index: 10;
+                    border-left: 2px solid black;
+                    border-right: 2px solid black;
+                }
+
+                &::before {
+                    width: 4.4cqw;
+                    rotate: -43deg;
+                    height: 20cqw;
+                    top: 2cqw;
+                    right: 8.8cqw;
+                }
+
+                &::after {
+                    width: 4.6cqw;
+                    rotate: -41deg;
+                    height: 18cqw;
+                    top: 157.4cqw;
+                    left: 7.2cqw;
+                }
+            }
+
+            .post-wrapper {
+                background: var(--secondary);
+                height: 171cqw;
+                width: 90cqw;
+                top: 6cqw;
+                left: 6cqw;
+                clip-path: polygon(21% 0%, 56% 0.7%, 96% 0%, 97% 12%, 98% 95.7%, 71% 96.4%, 35% 97%, -1% 96%, 2% 52%, 2.5% 10%, 18% 10.7%);
+            }
+
+            .post {
+                font-family: 'Comic Neue';
+
+                h1:first-of-type {
+                    margin-left: 16cqw;
+                }
+
+                /* p:has(> iframe[src*="open.spotify.com"]) {
+                    position: relative;
+                    width: 100%;
+                    aspect-ratio: 360 / 152;
+                    overflow: hidden;
+
+                    >iframe {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 360px;
+                        height: 152px;
+                        transform-origin: top left;
+                        transform: scale(calc((90cqw - 2rem) / 360px));
+                    }
+                } */
+            }
+
+            @media (min-width: 426px) {
+                .frame-container {
+                    background-image: url('../img/main2/weeknotes-post.webp');
+
+                    &::before {
+                        width: 3.1cqw;
+                        height: 14cqw;
+                        top: 0cqw;
+                        right: 22.6cqw;
+                    }
+
+                    &::after {
+                        width: 3.1cqw;
+                        height: 12cqw;
+                        top: 61.2cqw;
+                        left: 20.8cqw;
+                    }
+
+                }
+
+                .post-wrapper {
+                    height: 69.4cqw;
+                    top: 3.2cqw;
+                    left: 20cqw;
+                    width: 60cqw;
+                    padding: 8cqw var(--space-md) var(--space-xxl);
+                    clip-path: polygon(20.6% 0.7%, 31% 0.3%, 56% 1.2%, 98% 0.4%, 98.5% 12%, 99.4% 44%, 99.1% 96%, 80% 97%, 50% 97%, 41% 97.5%, 0.2% 96.6%, 0.1% 74%, 1% 47%, 1% 17%, 17.4% 17.5%);
+                }
+
+                .post {
+                    h1:first-of-type {
+                        margin-left: 5cqw;
+                    }
+
+                    /* p:has(> iframe[src*="open.spotify.com"])>iframe {
+                        transform: scale(calc((60cqw - 2rem) / 360px));
+                    } */
+                }
+            }
+        }
+
+        .post-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            position: absolute;
+            padding: var(--space-xl) var(--space-md);
+        }
+
+        .sidenote-container {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+
+            .sidenote-button {
+                background: none;
+                width: 4rem;
+                height: 4rem;
+                border: none;
+                margin: .5rem;
+                background-image: url(../img/main2/icon.webp);
+                background-size: 100%;
+            }
+
+            &:has(.sidenote:popover-open) {
+                .sidenote-button {
+                    background-image: url(../img/main2/icon-open.webp);
+                }
+            }
+
+            .sidenote:popover-open {
+                width: 10rem;
+                height: 10rem;
+                position: absolute;
+                inset: unset;
+                bottom: 2rem;
+                right: 4rem;
+                border: none;
+                background: none;
+                overflow: hidden;
+            }
+
+            .sidenote img {
+                width: 100%;
+            }
+
+            .sidenote .wrapper {
+                position: absolute;
+                top: 0;
+                left: -2rem;
+                width: 6.5rem;
+            }
+
+            .sidenote .test {
+                shape-outside: polygon(113% 0%, 61% 16%, 43% 31%, 34% 48%, 43% 72%, 67% 86%, 100% 95%, 100% 100%, 0% 100%, 0% 0%);
+                width: 100%;
+                height: 10rem;
+                clip-path: polygon(113% 0%, 61% 16%, 43% 31%, 34% 48%, 43% 72%, 67% 86%, 100% 95%, 100% 100%, 0% 100%, 0% 0%);
+                font-size: 0.7rem;
+                float: left;
+            }
+
+            .sidenote p {
+                font-size: 0.7rem;
+            }
+        }
+    }
+}

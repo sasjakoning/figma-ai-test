@@ -1,0 +1,86 @@
+[
+  {
+    "linkType": "blogroll",
+    "description": "Great dev who gives nice talks for example on CSS day",
+    "title": "Una Kravets Online",
+    "url": "https://una.im/"
+  },
+  {
+    "linkType": "interesting",
+    "description": "CSS generator tool",
+    "title": "CSS Generator for Wavy Dividers",
+    "url": "https://css-generators.com/wavy-divider/"
+  },
+  {
+    "linkType": "interesting",
+    "description": "Handy CSS tips",
+    "title": "CSS Tip: Learn CSS the easy way",
+    "url": "https://css-tip.com/"
+  },
+  {
+    "linkType": "interesting",
+    "description": "Don't pirate! Anyway.. Useful site.",
+    "title": "freemediaheckyeah",
+    "url": "https://fmhy.net/"
+  },
+  {
+    "linkType": "interesting",
+    "description": "Dutch site for electronics.",
+    "title": "TinyTronics: Electronics for a tiny price!",
+    "url": "https://www.tinytronics.nl/nl"
+  },
+  {
+    "linkType": "interesting",
+    "description": "Very enjoyable video about OpenClaw and the future of AI agents.",
+    "title": "Why AI Agents are either the best or worst thing we’ve ever built - YouTube",
+    "url": "https://www.youtube.com/watch?v=WnzR5aOElvw"
+  },
+  {
+    "linkType": "interesting",
+    "description": "Multiplayer cursor camp!",
+    "title": "Cursor Camp",
+    "url": "https://neal.fun/cursor-camp/"
+  },
+  {
+    "linkType": "interesting",
+    "description": "Useful references for UI/UX design.",
+    "title": "The Component Gallery",
+    "url": "https://component.gallery/"
+  },
+  {
+    "linkType": "blogroll",
+    "description": "A fun blog I tend to look at for inspiration.",
+    "title": "localghost",
+    "url": "https://localghost.dev/"
+  },
+  {
+    "linkType": "blogroll",
+    "description": "Someone who used to teach me about the web and how to make it fun.",
+    "title": "Vasilis van Gemert’s personal homepage",
+    "url": "https://vasilis.nl/"
+  },
+  {
+    "linkType": "blogroll",
+    "description": "He gives good talks about the web and is part of the W3C's AB.",
+    "title": "Home | hidde.blog",
+    "url": "https://hidde.blog/"
+  },
+  {
+    "linkType": "blogroll",
+    "description": "Makes fun games.",
+    "title": "eieio.games",
+    "url": "https://eieio.games/"
+  },
+  {
+    "linkType": "blogroll",
+    "description": "Reworks their website every year with something unique and inspiring.",
+    "title": "Lynn Fisher",
+    "url": "https://lynnandtonic.com/"
+  },
+  {
+    "linkType": "blogroll",
+    "description": "Makes some really interesting stuff.",
+    "title": "Home | Hello my name is Niels Leenheer",
+    "url": "https://nielsleenheer.com/"
+  }
+]
